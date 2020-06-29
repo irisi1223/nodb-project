@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import AddNote from './Components/AddNote'
 import Notes from './Components/Note'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import './App.css'
 import axios from 'axios'
 
 class App extends Component{
@@ -97,7 +100,11 @@ class App extends Component{
    render(){
        return(
          
-           <div><header></header>
+           <div className='body'>
+             <div className='header'>
+               <header><Header/></header>
+             </div>
+           
              {this.state.notes.map( (e, i) => {
            return <Notes notesProp = {e}
            indexProp ={i}
@@ -107,7 +114,9 @@ class App extends Component{
            editNoteProp={this.editNote}/>
            })}
                <AddNote addNoteProp =  {this.addNote}/>
-               <footer></footer>
+                <div className= 'footer'>
+                  <footer ><Footer/></footer>
+                </div>
            </div>
        )
    } 

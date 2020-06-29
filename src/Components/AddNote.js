@@ -14,15 +14,15 @@ class AddNote extends Component{
 
     render(){
         return(
-            <div>
+            <div className='ip'>
                 
-                <h1>Notes</h1>
-                <h1>{this.state.inputField}</h1>
+                <h1 className='notes'>Notes:</h1>
+                <h1 className='display-note'>{this.state.inputField}</h1>
                 <input name= 'inputField'
                  value= {this.state.inputField} 
                 onChange = {(event)=> this.handleChange(event)}></input>
-                <button onClick = {() => this.props.addNoteProp(this.state.inputField)}>add note</button>
-                <h1>Notes</h1>
+                <button className='add-button' onClick = {() => this.props.addNoteProp(this.state.inputField)}>add note</button>
+                
             </div>
         )
     }

@@ -1,5 +1,5 @@
 const notes = [{
-    valNote: 'lkj;',
+    valNote: '',
     id: 1
 }];
 let currentId = 2

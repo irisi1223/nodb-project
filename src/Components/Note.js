@@ -30,13 +30,17 @@ class Note extends Component{
     render(){
         console.log(this.props)
         return(
-            <div>{
+            <div className= 'input-field'>{
                 this.state.isEditing? <div>
-                    <button onClick= {() => this.handleSaveChange()}>save changes</button>
-                    <input name= 'edit input' onChange= {(event)=> this.handleChange(event)} value={this.state.inputEdit}  />
-                </div>:<div>
-                    <h1>{this.props.notesProp.valNote}</h1>
-                <button onClick= {() => this.toggleEdit()}>edit</button>
+                    <div className='save'>
+                         <button onClick= {() => this.handleSaveChange()}>save changes</button>
+                    </div>    
+                            <div className='input'>
+                                 <input  name= 'edit input' onChange= {(event)=> this.handleChange(event)} value={this.state.inputEdit}  />
+                            </div>
+                </div>:<div className='prop'>
+                    <h1 className='stuck-note'>{this.props.notesProp.valNote}</h1>
+                <button className='edit-button' onClick= {() => this.toggleEdit()}>edit</button>
                 <button onClick= {() => this.handleDelete()}>delete</button></div>}
                 
             </div>    
